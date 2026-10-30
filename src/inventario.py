@@ -10,3 +10,10 @@ def clasificar_stock(stock_actual: int, stock_minimo: int) -> str:
     if stock_actual <= stock_minimo:
         return "BAJO"
     return "NORMAL"
+
+def calcular_porcentaje_stock(stock_actual: int, stock_minimo: int) -> float:
+    if stock_actual < 0:
+        raise ValueError("El stock actual no puede ser negativo")
+    if stock_minimo <= 0:
+        raise ValueError("El stock minimo debe ser mayor que cero")
+    return round(stock_actual / stock_minimo * 100, 1)
